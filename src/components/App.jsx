@@ -1,9 +1,14 @@
-//import { useMemo } from 'react';
-import { UserMenu } from './UserMenu';
-import { useUser } from '../userContext.jsx';
+import { Layout } from './Layout/Layout';
+import { AppBar } from './AppBar/AppBar';
+import { TaskForm } from './TaskForm/TaskForm';
+import { TaskList } from './TaskList/TaskList';
 
 export const App = () => {
-  const { isLoggedIn } = useUser();
-
-  return <div>{isLoggedIn && <UserMenu />}</div>;
+  return (
+    <Layout>
+      <AppBar />
+      <TaskForm />
+      <TaskList />
+    </Layout>
+  );
 };

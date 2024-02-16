@@ -1,18 +1,14 @@
-//import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App } from './components/App.jsx';
+import { App } from './components/App';
 import './index.css';
-//import { userContext } from './userContext.js';
-import { UserProvider } from './userContext';
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  //<React.StrictMode>
-  //<App />
-  //</React.StrictMode>
-  //<userContext.Provider value={contextValue}>
-  //  <App />
-  //</userContext.Provider>
-  <UserProvider>
-    <App />
-  </UserProvider>
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
 );
